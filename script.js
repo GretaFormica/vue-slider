@@ -36,6 +36,10 @@ const app = Vue.createApp({
                 this.games.activeImage++;
             }
         },
+
+        switchImage(index) {
+            this.games.activeImage = index;
+        }
     }
 
 });

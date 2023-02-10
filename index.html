@@ -44,7 +44,9 @@
                         v-bind:src="image" 
                         v-for="(image, index) in games.images" 
                         class="outline img-fluid p-1 d-inline thumb"
-                        :class="(index == games.activeImage) ? 'border-active' : '' ">
+                        :class="(index == games.activeImage) ? 'border-active' : '' "
+						@click="switchImage(index)"
+						>
 					</div>
 			</div>
 		</section>
