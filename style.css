@@ -1,0 +1,41 @@
+/* MAIN */
+
+/* jumbotron */
+
+.jumbotron{
+    background-image: url('./img/jumbo-bg.png');
+    background-size:cover;
+    height: 70vh;
+    width: 80vw;
+    margin: 0 auto;
+    color: white;
+}
+
+.jumbotron:active{
+    background-image: url('./img/ratchet-and-clank-rift-apart-keyart.jpg');
+}
+
+.jumbotron>.container{
+    height: 80vh;
+}
+
+.outline:hover{
+    outline: #0072ce solid 3px;
+
+}
+
+
+.img-console{
+    width: 150px;
+}
+
+.col-console:hover{
+    border-bottom: 1px solid #0072ce;
+}
+
+
+
+
+
+
+
