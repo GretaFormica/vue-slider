@@ -20,51 +20,47 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
 
     <!-- script -->
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./script.js" defer></script>
 </head>
 
 <body>
 
 	<!-- inizio main -->
-	<main>
+	<main id="root">
 
 		<section class="jumbotron mt-5">
-		
+
+            <!-- immagine visualizzata -->
+            <img :src="games.images[games.activeImage]">
+
 		</section>
 
 		<section class="game-figure">
 			<div class="container">
-				<div class="row py-4 gy-4">
 
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/returnal-listing-thumb-01-ps5.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
+                    <!-- thumbnails -->
+					<div class=" d-flex">
+                        <img 
+                        v-bind:src="image" 
+                        v-for="(image, index) in games.images" 
+                        class="outline img-fluid p-1 d-inline thumb"
+                        :class="(index == games.activeImage) ? 'border-active' : '' ">
 					</div>
-
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/ratchet-and-clank-rift-apart-keyart.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
-					</div>
-
-						
-
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/returnal-listing-thumb-01-ps5.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
-					</div>
-
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/ratchet-and-clank-rift-apart-keyart.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
-					</div>
-
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/returnal-listing-thumb-01-ps5.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
-					</div>
-
-					<div class="col-6 col-sm-4 col-lg-2">
-						<img src="./img/ratchet-and-clank-rift-apart-keyart.jpg" alt="game-figure" class="rounded mx-auto d-block  outline img-fluid p-1">
-					</div>
-
-				</div>
 			</div>
 		</section>
+
+         <!-- controlli -->
+         <div class="controls">
+
+			<button class="btn btn-outline-dark" id="prev" @click="prevImage()">
+				<i class="fa-solid fa-chevron-left"></i>
+			</button>
+
+
+			<button class="btn btn-outline-dark" id="next" @click="nextImage()">
+				<i class="fa-solid fa-chevron-right"></i>
+			</button>
+		</div>
 </body>
 
 </html>
